@@ -1,0 +1,15 @@
+.register_container.active,
+.login_container.active{
+    display:block;
+    background-color: white;
+}
+
+.login_container,
+.register_container{
+    display: none;
+    position: absolute;
+    top:60px;
+    left:0;
+    right:0;
+    height: 500px;
+}

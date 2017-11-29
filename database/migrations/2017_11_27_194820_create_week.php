@@ -16,7 +16,6 @@ class CreateWeek extends Migration
         Schema::create('week', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->index('id');
         });
     }
 

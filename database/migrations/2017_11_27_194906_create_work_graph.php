@@ -17,8 +17,8 @@ class CreateWorkGraph extends Migration
             $table->increments('id');
             $table->time('time_open');
             $table->time('time_closed');
-            $table->integer('shop_id')->unsigned();
-            $table->integer('week_id')->unsigned();
+            $table->unsignedInteger('shop_id');
+            $table->unsignedInteger('week_id');
             $table->boolean('is_work');
 
             $table->foreign('shop_id')
