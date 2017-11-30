@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call([
              ShopTableSeeder::class,
-             WorkGraphTableSeeder::class
+             WorkGraphTableSeeder::class,
+             AdminTabelSeeder::class,
+             UserTabelSeeder::class
          ]);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

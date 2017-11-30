@@ -1,32 +1,51 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Shops</div>
-                    <div class="panel-body">
-                        @foreach($shops as $shop)
-                            <p>
-                                {{ $shop->name }}
-                                <ol>
-                                    @foreach($shop->work_graphs as $work_graph)
-                                        @if($work_graph->is_work)
-                                        <li>
-                            <p>{{$work_graph->time_open}}</p>
-                            <p>{{$work_graph->time_closed}}</p>
-                            <p>{{$work_graph->week->name}}</p>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                ID
+            </th>
 
-                                     </li>
-                                    @endif
-                            @endforeach
-                            </ol>
-                            </p>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <th>
+                Name
+            </th>
+
+            <th>
+                Edit
+            </th>
+
+            <th>
+                Delete
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($shops as $shop)
+            <tr>
+                <td>
+                    {{$shop->id}}
+                </td>
+
+                <td>
+                    {{$shop->name}}
+                </td>
+
+                {{--<td>--}}
+                    {{--<a class="btn btn-success" href="{{route('admin.users.edit.form', $user->id)}}">edit</a>--}}
+                {{--</td>--}}
+
+                {{--<td>--}}
+                    {{--<a class="btn btn-success" href="{{route('admin.users.delete', $user->id)}}">delete</a>--}}
+                {{--</td>--}}
+            </tr>
+        @endforeach
+        </tbody>
+
+    </table>
+    <ul class="pagination">
+        {{ $shops->links() }}
+    </ul>
 @endsection

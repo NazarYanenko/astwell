@@ -43,7 +43,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-user-circle"></i>
-                    <span>Администратори</span>
+                    <span>Administrators</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -53,7 +53,7 @@
                         <li class="active">
                             <a href="{{route('admin.admins.list')}}">
                                 <i class="fa fa-circle-o"></i>
-                                Список администраторов
+                                Administrators List
                             </a>
                         </li>
 
@@ -84,17 +84,46 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-users"></i> <span> Пользователи</span>
+                    <i class="fa fa-users"></i> <span> Users</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    @if(\Illuminate\Support\Facades\Auth::user()->isAdmin)
-                        <li><a href="/administrator/user/create"><i class="fa fa-circle-o"></i> Добавить пользователя</a></li>
-                        <li class="active"><a href="/administrator/user/index"><i class="fa fa-circle-o"></i> Список пользователей</a></li>
-                    @else
-                        <li><a href="/moderator/user/create"><i class="fa fa-circle-o"></i> Добавить пользователя</a></li>
-                        <li class="active"><a href="/moderator/user/index"><i class="fa fa-circle-o"></i> Список пользователей</a></li>
-                    @endif
+
+                        <li class="active">
+                            <a href="{{route('admin.users.show')}}">
+                                <i class="fa fa-circle-o"></i>
+                                Users List
+                            </a>
+                        </li>
+
+
+                        {{--<li >--}}
+                            {{--<a href="{{route('admin.users.edit.form',['id'])}}">--}}
+                                {{--<i class="fa fa-circle-o"></i>--}}
+                                {{--Users--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span> Shops</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                        <li class="active">
+                            <a href="{{route('admin.shops.index')}}">
+                                <i class="fa fa-circle-o"></i>
+                                Shops List
+                            </a>
+                        </li>
+
                 </ul>
             </li>
 

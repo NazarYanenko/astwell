@@ -49,4 +49,7 @@
         </tbody>
 
     </table>
+    <ul class="pagination">
+        {{ $admins->links() }}
+    </ul>
 @endsection

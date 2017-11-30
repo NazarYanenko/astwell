@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/','CatalogController@index')->name('catalog');
 
 Auth::routes();
 
@@ -42,6 +43,24 @@ Route::prefix('admin')->group(function (){
         Route::post('admin/edit','AdminController@editAdmin')
             ->name('admin.edit');
 
+
+        Route::get('users','AdminUserController@showUsers')
+            ->name('admin.users.show');
+
+        Route::get('users/edit/{id}','AdminUserController@editUsersForm')
+            ->where('id','[0-9]+')
+            ->name('admin.users.edit.form');
+
+        Route::post('users/edit','AdminUserController@editUser')
+            ->name('admin.users.edit');
+
+        Route::get('users/delete/{id}','AdminUserController@deleteUser')
+            ->where('id', '[0-9]+')
+            ->name('admin.users.delete');
+
+        Route::get('shops','AdminShopsController@index')
+            ->name('admin.shops.index');
+
     });
 
     Route::post('/login','Auth\AdminLoginController@login')
@@ -51,7 +70,10 @@ Route::prefix('admin')->group(function (){
         ->name('admin.login');
 
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::resource('shops','ShopController');
+//    Route::resource('shops','ShopController');
+
+
+
 
 });
 

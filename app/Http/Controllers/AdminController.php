@@ -40,7 +40,7 @@ class AdminController extends Controller
 
     public function adminList()
     {
-        $admins = Admin::query()->get();
+        $admins = Admin::query()->paginate();
         return view('admin.manageAdmins.adminsList')->with(['admins' => $admins]);
     }
 
@@ -79,7 +79,6 @@ class AdminController extends Controller
             'password' => 'required|min:8',
         ])->validate();
 
-//        dd($request);
         $edit = Admin::find($request->id);
         $edit->name = $request->name;
         if($edit->email != $request->email){

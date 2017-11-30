@@ -1,0 +1,181 @@
+body{
+    padding-top: 50px;
+}
+
+.wrapper{
+    position: relative;
+}
+
+/*USEFUL CLASSES*/
+
+.rp{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+/*END USEFUL CLASSES*/
+
+/*TOP NAVIGARION*/
+
+
+
+/*.top-navigation .nav-item:not(:last-child){*/
+    /*border-right:1px solid;*/
+    /*border-color: rgba(255,255,255,.2);*/
+/*}*/
+
+/*.top-navigation .nav-link{*/
+    /*color: #7F7F7F;*/
+    /*!*text-transform: uppercase;*!*/
+    /*font-size: 12px;*/
+/*}*/
+
+.m-navbar{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    z-index: 6;
+}
+
+.m-navbar > div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.m-navbar ul {
+    position: fixed;
+    width: 255px;
+    padding-top: 25px;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.m-navbar ul a{
+    position: relative;
+    display: block;
+    z-index: 60;
+    width: 100%;
+    padding: 15px;
+    margin-left: -5px;
+    margin-right: -5px;
+    overflow: hidden;
+}
+
+.m-navbar ul li:hover a:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.m-navbar ul.active a:before, .m-navbar ul li:hover a:before{
+    z-index: -1;
+}
+
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+.bounce-leave-active {
+    animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*TOP NAVIGATION END*/
+
+/*HEADER*/
+
+header .header-nav{
+    display: block;
+    height: 100%;
+    list-style-type: none;
+    text-align: right;
+}
+
+header .header-nav li{
+    float: right;
+}
+
+header .header-nav a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+/*HEADER END*/
+
+.page .bg-section{
+    position: relative;
+    display: flex;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page .bg-section:after{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    content: '';
+}
+
+.page .bg-section .bg-content{
+    z-index: 5;
+}
+
+.white-section .items-box a{
+    display: block;
+    text-decoration: none;
+}
+
+.white-section .items-box .item-numeric div, .white-section .items-box .item-text div{
+    padding: 15px;
+}
+
+.white-section .items-box a{
+    text-decoration: none;
+}
+
+/*OREND OR SALE*/
+.orend-or-sale{
+    /*position: relative;*/
+    /*height: 100%;*/
+}
+
+.orend-or-sale .switcher-box{
+    /*position: relative;*/
+    /*display: flex;*/
+}
+
+.orend-or-sale .section{
+    /*position: inherit;*/
+    /*display: flex;*/
+    margin-top: -28px;
+    width: 100%;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+/*END OREND OR SALE*/
