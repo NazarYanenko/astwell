@@ -42,34 +42,45 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-user-circle"></i> <span>Администратори</span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    <i class="fa fa-user-circle"></i>
+                    <span>Администратори</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
-                    @if(\Illuminate\Support\Facades\Auth::user()->isAdmin)
-                        <li><a href="/administrator/admins/create"><i class="fa fa-circle-o"></i> Добавить администратора</a></li>
-                        <li class="active"><a href="/administrator/admins/index"><i class="fa fa-circle-o"></i> Список администраторов</a></li>
-                    @else
-                        <li class="active"><a href="/moderator/admins/index"><i class="fa fa-circle-o"></i> Список администраторов</a></li>
-                    @endif
+
+                        <li class="active">
+                            <a href="{{route('admin.admins.list')}}">
+                                <i class="fa fa-circle-o"></i>
+                                Список администраторов
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="{{route('admin.form.create')}}">
+                                <i class="fa fa-circle-o"></i>
+                                Create New Admin
+                            </a>
+                        </li>
                 </ul>
             </li>
 
 
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-user-secret"></i> <span> Модератори</span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    @if(\Illuminate\Support\Facades\Auth::user()->isAdmin)
-                        <li><a href="/administrator/moderator/create"><i class="fa fa-circle-o"></i> Добавить модератора</a></li>
-                        <li class="active"><a href="/administrator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>
-                    @else
-                        <li class="active"><a href="/moderator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>
-                    @endif
-                </ul>
-            </li>
+            {{--<li class="treeview">--}}
+                {{--<a href="#">--}}
+                    {{--<i class="fa fa-user-secret"></i> <span> Модератори</span>--}}
+                    {{--<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>--}}
+                {{--</a>--}}
+                {{--<ul class="treeview-menu">--}}
+                    {{--@if(\Illuminate\Support\Facades\Auth::user()->isAdmin)--}}
+                        {{--<li><a href="/administrator/moderator/create"><i class="fa fa-circle-o"></i> Добавить модератора</a></li>--}}
+                        {{--<li class="active"><a href="/administrator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>--}}
+                    {{--@else--}}
+                        {{--<li class="active"><a href="/moderator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>--}}
+                    {{--@endif--}}
+                {{--</ul>--}}
+            {{--</li>--}}
 
             <li class="treeview">
                 <a href="#">

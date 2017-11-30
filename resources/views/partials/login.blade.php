@@ -1,5 +1,4 @@
 <div class="registration-content login_container">
-
     <div class="col-xs-4 col-xs-offset-4">
         <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}

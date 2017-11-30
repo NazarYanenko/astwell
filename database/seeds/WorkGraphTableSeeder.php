@@ -12,16 +12,16 @@ class WorkGraphTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('work_graphs')->truncate();
+        DB::table('work_time')->truncate();
         $faker = Faker\Factory::create();
         for($i = 1; $i <= 50; $i++){
-            for ($j = 1;$j <=7;$j++){
-                DB::table('work_graphs')->insert([
+            for ($j = 1;$j <=365;$j++){
+                DB::table('work_time')->insert([
                     'time_open'=>$faker->time('H:i:s','12:00:00'),
                     'time_closed'=>$faker->time('H:i:s'),
-                    'is_work'=>rand(0,1),
+                    'date'=>$faker->date(),
+                    'is_open'=>rand(0,1),
                     'shop_id'=>$i,
-                    'week_id'=>$j
                 ]);
             }
         }

@@ -16,6 +16,8 @@ class CreateShops extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+//            $table->foreign('id')->references('shop_id')->on('work_time');
+
         });
     }
 
