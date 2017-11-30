@@ -9,7 +9,7 @@ class Shop extends Model
 
     public $timestamps = false;
 
-    public function work_graphs()
+    public function workGraphs()
     {
         return $this->hasMany(WorkTime::class);
     }

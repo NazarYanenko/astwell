@@ -15,4 +15,15 @@ class AdminShopsController extends Controller
             'shops' => $shops
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        $shop = Shop::query()
+            ->find($request['id']);
+        $shop->workGraphs()->delete();
+        $shop->delete();
+
+        return redirect(route('admin.shops.index'));
+
+    }
 }

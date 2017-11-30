@@ -2,10 +2,10 @@
 
 
 @section('content')
-    <form method="post" action="{{route('admin.edit')}}">
+    <form method="post" action="admin/admin/update/{{$admin->id}}">
 {{csrf_field()}}
 
-        <input type="hidden" name="id" value="{{$admin->id}}">
+        {{--<input type="hidden" name="id" value="{{$admin->id}}">--}}
 
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>

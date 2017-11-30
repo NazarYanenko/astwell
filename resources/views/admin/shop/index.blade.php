@@ -33,13 +33,13 @@
                     {{$shop->name}}
                 </td>
 
-                {{--<td>--}}
-                    {{--<a class="btn btn-success" href="{{route('admin.users.edit.form', $user->id)}}">edit</a>--}}
-                {{--</td>--}}
+                <td>
+                    <a class="btn btn-success" href="{{route('admin.shop.edit.form', $shop->id)}}">edit</a>
+                </td>
 
-                {{--<td>--}}
-                    {{--<a class="btn btn-success" href="{{route('admin.users.delete', $user->id)}}">delete</a>--}}
-                {{--</td>--}}
+                <td>
+                    <a class="btn btn-success" href="{{route('admin.shop.delete', $shop->id)}}">delete</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

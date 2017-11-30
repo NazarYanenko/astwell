@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WorkTime;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('front.index');
+
+        $dates = WorkTime::query()
+            ->with('shop')
+            ->whereDateIs($request)
+            ->whereTimeIs($request)
+            ->paginate(5);
+
+        return view('front.index')->with(['dates' => $dates]);
     }
 }

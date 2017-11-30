@@ -6,9 +6,10 @@
  * Time: 15:27
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrator;
 
 use App\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
@@ -73,19 +74,18 @@ class AdminController extends Controller
     }
 
     public function editAdmin(Request $request){
+
         Validator::make($request->all(), [
             'name' => 'required|max:100',
-            'email' => 'required|unique:admins',
+            'email' => 'required',
             'password' => 'required|min:8',
         ])->validate();
 
-        $edit = Admin::find($request->id);
-        $edit->name = $request->name;
-        if($edit->email != $request->email){
-            $edit->email = $request->email;
-        }
-        $edit->password = $request->password;
-        $edit->save();
+        $admin = Admin::find($request->id);
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->password = $request->password;
+        $admin->save();
 
         return redirect(route('admin.admins.list'));
 

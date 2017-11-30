@@ -15,7 +15,7 @@ class AdminTabelSeeder extends Seeder
     {
         DB::table('admins')->truncate();
         $faker = Faker\Factory::create();
-        for($i = 0; $i < 50; $i++){
+        for($i = 0; $i < 2; $i++){
             DB::table('admins')->insert([
                 'name' => $faker->name(),
                 'email' => $faker->email(),
