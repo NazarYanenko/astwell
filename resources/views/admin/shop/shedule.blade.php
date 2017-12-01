@@ -5,6 +5,16 @@
     <form method="post" action="{{route('admin.shops.edit',['id' => $id])}}">
         {{csrf_field()}}
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="form-group">
             <label for="exampleInputEmail1">Time Open</label>
             <input name="time_open" type="time" class="form-control" id="exampleInputEmail1" >

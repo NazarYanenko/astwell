@@ -32,16 +32,14 @@ class UserController extends Controller
 
         Validator::make($request->all(), [
             'name' => 'required|max:100',
-            'email' => 'required|unique:admins',
+            'email' => 'required|unique',
             'password' => 'required|min:8',
         ])->validate();
 
         $edit = User::find($id);
         $edit->name = $request->name;
+        $edit->email = $request->email;
 
-        if($edit->email != $request->email){
-            $edit->email = $request->email;
-        }
 
         $edit->password = $request->password;
         $edit->save();
