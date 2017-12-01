@@ -39,18 +39,18 @@ class AdminController extends Controller
 
 
 
-    public function adminList()
+    public function show()
     {
         $admins = Admin::query()->paginate();
-        return view('admin.manageAdmins.adminsList')->with(['admins' => $admins]);
+        return view('admin.admins.list')->with(['admins' => $admins]);
     }
 
-    public function createAdminForm()
+    public function form()
     {
-        return view('admin.manageAdmins.create');
+        return view('admin.admins.form');
     }
 
-    public function createAdmin(Request $request)
+    public function create(Request $request)
     {
         Validator::make($request->all(), [
             'name' => 'required|max:100',
@@ -67,13 +67,13 @@ class AdminController extends Controller
         return redirect(route('admin.dashboard'));
     }
 
-    public function editAdminForm($id)
+    public function editForm($id)
     {
         $admin = Admin::query()->find($id);
-        return view('admin.manageAdmins.edit')->with(['admin'=>$admin]);
+        return view('admin.admins.edit')->with(['admin'=>$admin]);
     }
 
-    public function editAdmin(Request $request){
+    public function edit(Request $request){
 
         Validator::make($request->all(), [
             'name' => 'required|max:100',
@@ -87,7 +87,7 @@ class AdminController extends Controller
         $admin->password = $request->password;
         $admin->save();
 
-        return redirect(route('admin.admins.list'));
+        return redirect(route('admin.list'));
 
     }
 

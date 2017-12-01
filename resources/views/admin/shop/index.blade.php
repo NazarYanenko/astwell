@@ -13,10 +13,6 @@
             </th>
 
             <th>
-                Edit
-            </th>
-
-            <th>
                 Delete
             </th>
 
@@ -34,7 +30,7 @@
                 </td>
 
                 <td>
-                    <a class="btn btn-success" href="{{route('admin.shop.edit.form', $shop->id)}}">edit</a>
+                    <a class="btn btn-success" href="{{route('admin.shops.shedule', $shop->id)}}">shedule</a>
                 </td>
 
                 <td>

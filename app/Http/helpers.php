@@ -1,11 +1,14 @@
 <?php
 
-if(!function_exists('route_path')){
+if(!function_exists('checkbox_boolean')){
     /**
      * @param null $file
      */
-    function route_path($file = null)
+    function checkbox_boolean($checkbox = null)
     {
-        return __DIR__  . $file;
+        if($checkbox === 'on'){
+            return true;
+        }
+        return false;
     }
 }

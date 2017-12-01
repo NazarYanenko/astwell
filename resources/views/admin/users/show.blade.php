@@ -50,7 +50,7 @@
                 </td>
 
                 <td>
-                    <a class="btn btn-success" href="{{route('admin.users.edit.form', $user->id)}}">edit</a>
+                    <a class="btn btn-success" href="{{route('admin.users.form', $user->id)}}">edit</a>
                 </td>
 
                 <td>

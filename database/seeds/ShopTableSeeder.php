@@ -14,7 +14,7 @@ class ShopTableSeeder extends Seeder
     {
         DB::table('shops')->truncate();
         $faker = Faker\Factory::create();
-        for($i = 0; $i < 2; $i++){
+        for($i = 0; $i < 10; $i++){
             DB::table('shops')->insert([
                 'name' => $faker->company
             ]);

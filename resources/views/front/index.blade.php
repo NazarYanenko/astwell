@@ -37,11 +37,11 @@
         <ul class="pagination">
             {{ $dates->links() }}
         </ul>
-        <form action="{{route('catalog')}}">
-       <label>Date:</label> <input type="date" name="date" />
-       <label>Time:</label> <input type="time" name="time" />
-            <input type="submit" name="submit"/>
-        </form>
+        {{--<form action="{{route('catalog')}}">--}}
+       {{--<label>Date:</label> <input type="date" name="date" />--}}
+       {{--<label>Time:</label> <input type="time" name="time" />--}}
+            {{--<input type="submit" name="submit"/>--}}
+        {{--</form>--}}
     </div>
 
 

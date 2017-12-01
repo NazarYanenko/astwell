@@ -14,7 +14,7 @@ class WorkGraphTableSeeder extends Seeder
     {
         DB::table('work_time')->truncate();
         $faker = Faker\Factory::create();
-        for($i = 1; $i <= 2; $i++){
+        for($i = 1; $i <= 10; $i++){
             for ($j = 1;$j <=365;$j++){
                 DB::table('work_time')->insert([
                     'time_open'=>$faker->date('H:i:s', rand(25200,43200)),

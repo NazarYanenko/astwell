@@ -12,8 +12,14 @@
     <nav class="navbar top-navigation fixed-top ">
 
         <div class="container">
-            <div class="row d-flex flex-row-reverse align-items-center w-100">
-
+            <div class="row d-flex flex-row align-items-center w-100 customClass">
+                <div class="col-10 text-center ">
+                    <form action="{{route('catalog')}}">
+                        <label>Date:</label> <input type="date" name="date" />
+                        <label>Time:</label> <input type="time" name="time" />
+                        <input class="btn btn-outline-danger" type="submit" name="submit"/>
+                    </form>
+                </div>
                 <div class="col-2 text-right">
 
                     <label for="menu-btn">

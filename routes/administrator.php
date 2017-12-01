@@ -4,19 +4,49 @@
 Route::get('/','AdminController@index')
     ->name('admin.dashboard');
 
-Route::get('/admins','AdminController@adminList')
-    ->name('admin.admins.list');
+Route::get('/list','AdminController@show')
+    ->name('admin.list');
 
-Route::post('/admins/new','AdminController@createAdmin')
+Route::post('/new','AdminController@create')
     ->name('admin.create');
 
-Route::get('/admins/create','AdminController@createAdminForm')
+Route::get('/create','AdminController@form')
     ->name('admin.form.create');
 
-Route::get('admin/edit/{id}','AdminController@editAdminForm')
+Route::get('edit/{id}','AdminController@editForm')
     ->where('id', '[1-9]+')
     ->name('admin.edit.form');
 
-Route::post('admin/update/{id}','AdminController@editAdmin')
+Route::post('admin/update/{id}','AdminController@edit')
     ->where('id', '[1-9]+')
     ->name('admin.edit');
+
+Route::get('shops','ShopsController@index')
+    ->name('admin.shops');
+
+Route::get('shops/shedule/{id}','ShopsController@shedule')
+    ->where('id', '[1-9]+')
+    ->name('admin.shops.shedule');
+
+Route::post('shops/edit/{id}','ShopsController@edit')
+    ->where('id', '[1-9]+')
+    ->name('admin.shops.edit');
+
+Route::get('shop/delete/{id}','ShopsController@delete')
+    ->where('id', '[1-9]+')
+    ->name('admin.shop.delete');
+
+Route::get('users','UserController@show')
+    ->name('admin.users.show');
+
+Route::get('users/edit/{id}','UserController@form')
+    ->where('id','[1-9]+')
+    ->name('admin.users.form');
+
+Route::post('users/update/{id}','UserController@edit')
+    ->where('id','[1-9]+')
+    ->name('admin.users.edit');
+
+Route::get('users/delete/{id}','UserController@delete')
+    ->where('id', '[1-9]+')
+    ->name('admin.users.delete');

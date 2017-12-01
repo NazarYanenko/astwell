@@ -64,7 +64,9 @@ a,label,li{
 body{
     padding-top: 80px;
 }
-
+.customClass{
+    color: white;
+}
 /*TOP NAV-BAR*/
 
 .top-navigation{

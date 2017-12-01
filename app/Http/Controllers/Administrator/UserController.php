@@ -1,43 +1,42 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrator;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
-    public function showUsers()
+    public function show()
     {
         $users = User::query()->paginate(20);
-
-        return view('admin.manageUsers.showUsers')->with([
+        return view('admin.users.show')->with([
            'users' => $users
         ]);
     }
 
-    public function editUsersForm($id)
+    public function form($id)
     {
-//        dd($id);
-        $user = User::query()->find($id);
-        return view('admin.manageUsers.edit')->with([
-            'user' => $user
+        $user = User::query()
+            ->find($id);
+        return view('admin.users.edit')->with([
+           'user' => $user
         ]);
-
-//        return redirect(route('admin.users.show'));
     }
 
-    public function editUser(Request $request)
+    public function edit(Request $request ,$id)
     {
+
         Validator::make($request->all(), [
             'name' => 'required|max:100',
             'email' => 'required|unique:admins',
             'password' => 'required|min:8',
         ])->validate();
 
-        $edit = User::find($request->id);
+        $edit = User::find($id);
         $edit->name = $request->name;
 
         if($edit->email != $request->email){
@@ -49,7 +48,7 @@ class AdminUserController extends Controller
         return redirect(route('admin.users.show'));
     }
 
-    public function deleteUser($id){
+    public function delete($id){
         $user = User::find($id);
         $user->delete();
         return redirect(route('admin.users.show'));

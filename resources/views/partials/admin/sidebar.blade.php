@@ -26,18 +26,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu tree" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            {{--<li class="active treeview menu-open">--}}
-                {{--<a href="#">--}}
-                    {{--<i class="fa fa-dashboard"></i> <span>Dashboard</span>--}}
-                    {{--<span class="pull-right-container">--}}
-              {{--<i class="fa fa-angle-left pull-right"></i>--}}
-            {{--</span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                    {{--<li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>--}}
-                    {{--<li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+
 
 
             <li class="treeview">
@@ -51,7 +40,7 @@
                 <ul class="treeview-menu">
 
                         <li class="active">
-                            <a href="{{route('admin.admins.list')}}">
+                            <a href="{{route('admin.list')}}">
                                 <i class="fa fa-circle-o"></i>
                                 Administrators List
                             </a>
@@ -66,21 +55,6 @@
                 </ul>
             </li>
 
-
-            {{--<li class="treeview">--}}
-                {{--<a href="#">--}}
-                    {{--<i class="fa fa-user-secret"></i> <span> Модератори</span>--}}
-                    {{--<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                    {{--@if(\Illuminate\Support\Facades\Auth::user()->isAdmin)--}}
-                        {{--<li><a href="/administrator/moderator/create"><i class="fa fa-circle-o"></i> Добавить модератора</a></li>--}}
-                        {{--<li class="active"><a href="/administrator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>--}}
-                    {{--@else--}}
-                        {{--<li class="active"><a href="/moderator/moderator/index"><i class="fa fa-circle-o"></i> Список модераторов</a></li>--}}
-                    {{--@endif--}}
-                {{--</ul>--}}
-            {{--</li>--}}
 
             <li class="treeview">
                 <a href="#">
@@ -118,7 +92,7 @@
                 <ul class="treeview-menu">
 
                         <li class="active">
-                            <a href="{{route('admin.shops.index')}}">
+                            <a href="{{route('admin.shops')}}">
                                 <i class="fa fa-circle-o"></i>
                                 Shops List
                             </a>
